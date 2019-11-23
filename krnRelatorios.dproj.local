@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/04/17 14:46:26.000.113,C:\Kronos\Projeto\krnRelatorios.dproj=C:\Users\Janilson\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2019/04/17 14:48:45.000.904,=C:\Kronos\Projeto\Unit3.pas</Transaction>
+    <Transaction>2019/04/17 14:49:33.000.033,C:\Kronos\Projeto\Fontes\Relatorios\udmConexao.pas=C:\Kronos\Projeto\Unit3.pas</Transaction>
+    <Transaction>2019/04/17 14:49:33.000.033,C:\Kronos\Projeto\Fontes\Relatorios\udmConexao.dfm=C:\Kronos\Projeto\Unit3.dfm</Transaction>
+    <Transaction>2019/04/24 10:08:23.501,=C:\Kronos\Projeto\Fontes\Relatorios\urptRelatorio.pas</Transaction>
+  </Transactions>
+</BorlandProject>

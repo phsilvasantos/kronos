@@ -1,0 +1,14 @@
+[Stats]
+EditorSecs=196142
+DesignerSecs=41839
+InspectorSecs=21425
+CompileSecs=10782120
+<<<<<<< HEAD
+OtherSecs=23937
+=======
+OtherSecs=24094
+>>>>>>> 6d7acf7e54993db40c7504d4960acfc90bc26eff
+StartTime=08/02/2019 15:34:12
+RealKeys=0
+EffectiveKeys=0
+DebugSecs=15002

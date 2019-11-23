@@ -1,0 +1,184 @@
+object rptReciboAvulso: TrptReciboAvulso
+  Left = 0
+  Top = 0
+  Caption = 'rptReciboAvulso'
+  ClientHeight = 475
+  ClientWidth = 799
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object RLReport1: TRLReport
+    Left = 8
+    Top = 8
+    Width = 794
+    Height = 1123
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = []
+    BeforePrint = RLReport1BeforePrint
+    object RLBand5: TRLBand
+      Left = 38
+      Top = 38
+      Width = 718
+      Height = 77
+      BandType = btHeader
+      Borders.Sides = sdCustom
+      Borders.DrawLeft = True
+      Borders.DrawTop = True
+      Borders.DrawRight = True
+      Borders.DrawBottom = True
+      object rlblFantasia: TRLLabel
+        Left = 112
+        Top = 4
+        Width = 599
+        Height = 16
+        Alignment = taCenter
+        AutoSize = False
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -15
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object rlblEndereco: TRLLabel
+        Left = 112
+        Top = 38
+        Width = 599
+        Height = 16
+        Alignment = taCenter
+        AutoSize = False
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object rlblTelefones: TRLLabel
+        Left = 112
+        Top = 55
+        Width = 599
+        Height = 16
+        Alignment = taCenter
+        AutoSize = False
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object rlblEmail: TRLLabel
+        Left = 112
+        Top = 23
+        Width = 599
+        Height = 16
+        Alignment = taCenter
+        AutoSize = False
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object img1: TRLImage
+        Left = 5
+        Top = 4
+        Width = 104
+        Height = 70
+        Borders.Sides = sdCustom
+        Borders.DrawLeft = False
+        Borders.DrawTop = False
+        Borders.DrawRight = False
+        Borders.DrawBottom = False
+        Stretch = True
+      end
+    end
+    object RLBand1: TRLBand
+      Left = 38
+      Top = 115
+      Width = 718
+      Height = 191
+      BandType = btTitle
+      Borders.Sides = sdCustom
+      Borders.DrawLeft = True
+      Borders.DrawTop = False
+      Borders.DrawRight = True
+      Borders.DrawBottom = True
+      object RLLabel1: TRLLabel
+        Left = 1
+        Top = 24
+        Width = 716
+        Height = 16
+        Align = faWidth
+        Alignment = taCenter
+        Caption = 'RECONHECIMENTO DE RECEBIMENTO'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object mmRecebimento: TRLMemo
+        Left = 11
+        Top = 82
+        Width = 700
+        Height = 17
+        Behavior = [beSiteExpander]
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -15
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+      end
+    end
+    object RLBand2: TRLBand
+      Left = 38
+      Top = 402
+      Width = 718
+      Height = 64
+      BandType = btSummary
+      object RLLabel2: TRLLabel
+        Left = 0
+        Top = 21
+        Width = 718
+        Height = 18
+        Align = faWidth
+        Alignment = taCenter
+        Borders.Sides = sdCustom
+        Borders.DrawLeft = False
+        Borders.DrawTop = True
+        Borders.DrawRight = False
+        Borders.DrawBottom = False
+        Caption = 'Assinatura do recebedor'
+      end
+    end
+    object RLBand3: TRLBand
+      Left = 38
+      Top = 306
+      Width = 718
+      Height = 96
+      BandType = btSummary
+      object lblData: TRLLabel
+        Left = 0
+        Top = 41
+        Width = 718
+        Height = 16
+        Align = faWidth
+        Alignment = taRightJustify
+      end
+    end
+  end
+end

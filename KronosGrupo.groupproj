@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{07736EAA-531F-44AD-8D64-B2F9D2B991F6}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Kronos.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="krnRelatorios.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Kronos">
+        <MSBuild Projects="Kronos.dproj"/>
+    </Target>
+    <Target Name="Kronos:Clean">
+        <MSBuild Projects="Kronos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Kronos:Make">
+        <MSBuild Projects="Kronos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="krnRelatorios">
+        <MSBuild Projects="krnRelatorios.dproj"/>
+    </Target>
+    <Target Name="krnRelatorios:Clean">
+        <MSBuild Projects="krnRelatorios.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="krnRelatorios:Make">
+        <MSBuild Projects="krnRelatorios.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Kronos;krnRelatorios"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Kronos:Clean;krnRelatorios:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Kronos:Make;krnRelatorios:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

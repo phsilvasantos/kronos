@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/02/08 13:37:07.000.262,=C:\Users\Janilson\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/03/12 10:01:24.000.861,=C:\Users\Janilson\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/03/12 10:02:06.000.407,C:\Kronos\Projeto\Fontes\Importacao\uFrmTelaImportacao.pas=C:\Users\Janilson\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/03/12 10:02:06.000.407,C:\Kronos\Projeto\Fontes\Importacao\uFrmTelaImportacao.dfm=C:\Users\Janilson\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2019/03/12 10:02:16.000.248,C:\Kronos\Projeto\ImportKronos.dproj=C:\Users\Janilson\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2019/03/18 16:05:11.000.707,=C:\Kronos\Projeto\ModelSupport_ImportKronos\default.txaPackage</Transaction>
+  </Transactions>
+</BorlandProject>
