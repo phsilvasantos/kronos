@@ -64,7 +64,6 @@ uses
 
 var
  config : TIniFile;
- st : string;
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;

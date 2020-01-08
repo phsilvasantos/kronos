@@ -59,6 +59,7 @@ type
     Recibodepagamento1: TMenuItem;
     ACBrExtenso1: TACBrExtenso;
     Recibodeentrega1: TMenuItem;
+    CentraldeRelatrios1: TMenuItem;
     procedure JvBitBtn5Click(Sender: TObject);
     procedure btnNovoClick(Sender: TObject);
     procedure btnEditarClick(Sender: TObject);
@@ -90,6 +91,7 @@ type
     procedure Histrico1Click(Sender: TObject);
     procedure Recibodepagamento1Click(Sender: TObject);
     procedure Recibodeentrega1Click(Sender: TObject);
+    procedure CentraldeRelatrios1Click(Sender: TObject);
   private
     procedure setValorPadraoDlg(defaultpath: string;const titulo: string = 'Selecione a NFe';
     const filtroFile:string = 'Arquivos NFE (*-nfe.XML)|*-nfe.XML|Arquivos XML (*.XML)|*.XML|Todos os Arquivos (*.*)|*.*';
@@ -108,7 +110,7 @@ implementation
 
 uses
   uFrmPedidoVenda, udmAcesso, krnVarGlobais, Funcoes, UfrmCCe, UfrmEnvioNFe, UfrmAutorizacaoGerente, krnConst, krnProcedures, uFrmMetasVenda, uFrmHistoricoPedido,
-  UfrmReciboAvulso, urptReciboAvulso, urptReciboEntrega;
+  UfrmReciboAvulso, urptReciboAvulso, urptReciboEntrega,  uFrmCentralRelatorios;
 
 {$R *.dfm}
 
@@ -260,6 +262,18 @@ begin
   end
   else
     raise Exception.Create('Cancelamento somente de NFe');
+end;
+
+procedure TFrmListaPedidos.CentraldeRelatrios1Click(Sender: TObject);
+begin
+  inherited;
+  try
+    Application.CreateForm(TFrmCentralRelatorios,FrmCentralRelatorios);
+    FrmCentralRelatorios.Hint := 'VENDA';
+    FrmCentralRelatorios.ShowModal;
+  finally
+    FreeAndNil(FrmCentralRelatorios);
+  end;
 end;
 
 procedure TFrmListaPedidos.ConsultarNFe1Click(Sender: TObject);

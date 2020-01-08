@@ -112,6 +112,7 @@ end;
 
 procedure TFrmLista.buscar(const pInicial, pFinal: integer);
 begin
+  //muda o self.where no formulario filho
   if trim(edtBusca.Text) <> '' then
     lista('SELECT ' +Self.ListaField+ ' FROM '+ self.Tabela,
     self.FieldOrderBy,

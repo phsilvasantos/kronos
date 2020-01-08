@@ -1,6 +1,7 @@
 inherited rptRelatorioPaisagem: TrptRelatorioPaisagem
   Caption = 'rptRelatorioPaisagem'
   ClientWidth = 1155
+  ExplicitLeft = -175
   ExplicitWidth = 1171
   PixelsPerInch = 96
   TextHeight = 13
@@ -61,6 +62,24 @@ inherited rptRelatorioPaisagem: TrptRelatorioPaisagem
     inherited bndFooter: TRLBand
       Width = 1047
       ExplicitWidth = 1047
+      inherited LblTotal: TRLLabel
+        Left = 1000
+        ExplicitLeft = 1000
+      end
+      object lblTotal2: TRLLabel
+        Left = 650
+        Top = 2
+        Width = 113
+        Height = 14
+        Alignment = taRightJustify
+        AutoSize = False
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
     end
     inherited rlgrpGrupo: TRLGroup
       Width = 1047

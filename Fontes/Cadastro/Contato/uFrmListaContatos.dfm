@@ -2,16 +2,13 @@ inherited FrmListaContatos: TFrmListaContatos
   Caption = 'Lista de Contatos'
   OnClose = FormClose
   PixelsPerInch = 96
-  TextHeight = 16
+  TextHeight = 14
   inherited pnlOpcoes: TPanel
     inherited btnNovo: TJvBitBtn
       OnClick = btnNovoClick
     end
     inherited btnEditar: TJvBitBtn
       OnClick = btnEditarClick
-    end
-    inherited btnOpcoes: TJvBitBtn
-      DropDownMenu = PopupMenu1
     end
     object btnArquivos: TJvBitBtn
       Left = 381
@@ -74,14 +71,6 @@ inherited FrmListaContatos: TFrmListaContatos
         Width = 114
         Visible = True
       end>
-  end
-  inherited PopupMenu1: TPopupMenu
-    Left = 416
-    Top = 120
-    object Centralderelatorios1: TMenuItem
-      Caption = 'Central de relat'#243'rios'
-      OnClick = Centralderelatorios1Click
-    end
   end
   object pmMasOpcoes: TPopupMenu
     Left = 512

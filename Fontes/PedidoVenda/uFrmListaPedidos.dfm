@@ -1,7 +1,8 @@
 inherited FrmListaPedidos: TFrmListaPedidos
   Hint = 'VENDA'
   Caption = 'Lista de Pedidos'
-  ExplicitTop = 2
+  ExplicitWidth = 800
+  ExplicitHeight = 600
   PixelsPerInch = 96
   TextHeight = 16
   inherited pnlOpcoes: TPanel
@@ -47,6 +48,8 @@ inherited FrmListaPedidos: TFrmListaPedidos
   inherited dbgrdConsulta: TJvDBGrid
     PopupMenu = pmContext
     OnDrawColumnCell = dbgrdConsultaDrawColumnCell
+    SortMarker = smDown
+    SortedField = 'ID'
     Columns = <
       item
         Expanded = False
@@ -151,6 +154,10 @@ inherited FrmListaPedidos: TFrmListaPedidos
     object Recibodeentrega1: TMenuItem
       Caption = 'Recibo de entrega'
       OnClick = Recibodeentrega1Click
+    end
+    object CentraldeRelatrios1: TMenuItem
+      Caption = 'Central de Relat'#243'rios'
+      OnClick = CentraldeRelatrios1Click
     end
   end
   object pmNF: TPopupMenu

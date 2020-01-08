@@ -403,6 +403,7 @@ begin
     self.Where := ' WHERE PRODUTO.BLOQUEADO=0 AND PRODUTO.GTIN LIKE '
     + QuotedStr('%'+ Trim(edtBusca.Text) + '%')
     + ' OR PRODUTO.DESCRICAO LIKE ' + QuotedStr('%'+Trim(edtBusca.Text)+'%')
+    + ' OR PRODUTO.GTIN LIKE ' + QuotedStr('%'+Trim(edtBusca.Text)+'%')
   else
     self.Where :='WHERE PRODUTO.BLOQUEADO=0';
   inherited;

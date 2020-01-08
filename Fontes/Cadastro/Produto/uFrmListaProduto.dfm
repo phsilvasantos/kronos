@@ -1,5 +1,7 @@
 inherited FrmListaProduto: TFrmListaProduto
   Caption = 'Lista de Produtos'
+  ExplicitWidth = 800
+  ExplicitHeight = 600
   PixelsPerInch = 96
   TextHeight = 16
   inherited pnlOpcoes: TPanel

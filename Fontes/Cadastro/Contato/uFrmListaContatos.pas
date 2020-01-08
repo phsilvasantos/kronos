@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uFrmLista, Data.DB, Vcl.Grids,
   Vcl.DBGrids, JvExDBGrids, JvDBGrid, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Buttons,
-  JvExButtons, JvBitBtn, Vcl.Menus, JvComponentBase, JvEnterTab;
+  JvExButtons, JvBitBtn, Vcl.Menus, JvComponentBase, JvEnterTab, JvExControls,
+  JvMarkupLabel;
 
 type
   TFrmListaContatos = class(TFrmLista)

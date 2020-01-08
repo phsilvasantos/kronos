@@ -431,6 +431,7 @@ type
     edtSPED_DIR: TDBEdit;
     btnDirSPED: TJvXPButton;
     lbl97: TLabel;
+    dsQySequencial: TDataSource;
     procedure btnOKClick(Sender: TObject);
     procedure btn1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -472,6 +473,7 @@ end;
 procedure TFrmConfiguracaoSistema.btn1Click(Sender: TObject);
 begin
   dsConfiguracaoSistema.DataSet.Post;
+  dsQySequencial.DataSet.Post;
   Close;
 end;
 

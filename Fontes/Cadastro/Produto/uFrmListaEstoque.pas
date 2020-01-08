@@ -88,6 +88,8 @@ begin
   if trim(edtBusca.Text) <> '' then
     self.Where := ' WHERE PRODUTO.GTIN LIKE ' + QuotedStr('%'+ Trim(edtBusca.Text) + '%')
     + ' OR PRODUTO.DESCRICAO LIKE ' + QuotedStr('%'+Trim(edtBusca.Text)+'%')
+    + ' AND PRODUTO.BLOQUEADO = 0 '
+
   else
     self.Where :='';
   inherited;

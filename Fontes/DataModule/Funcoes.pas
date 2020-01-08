@@ -10,7 +10,7 @@ function FsDataExtenso(Value : TDateTime) : string;
 
 function FsPastaApp : string;
 function FsTemp : string;
-function fsMascara(numCasa: Integer; const moeda : string = ''): string;
+function fsMascara(numCasa: Integer; const moeda : string = ''; const porcentagem : Boolean = false): string;
 function fsCopyChar(vezes:Integer; const caracter : Char = '#'): string;
 function PreencheString(Texto: String; Tamanho:Integer; CampoNumerico: Boolean): String;
 Procedure PMontaStringList(VSParametros: String; var VStrLstAux: TStringList); overload;
@@ -279,7 +279,7 @@ begin
   end;
   Result := caracter +','+  sAux+'0.'+sAuxZero;
 end;
-function fsMascara(numCasa: Integer; const moeda : string = ''): string;
+function fsMascara(numCasa: Integer; const moeda : string = ''; const porcentagem : Boolean = false ): string;
 var
   sAux: string;
 begin
@@ -297,6 +297,9 @@ begin
       else
         Result := sAux+fsCopyChar(numCasa);
     end;
+
+    if porcentagem then
+      Result := Result + ' %';
   end;
 end;
 

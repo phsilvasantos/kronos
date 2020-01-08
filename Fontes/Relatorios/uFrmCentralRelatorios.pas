@@ -127,19 +127,117 @@ const
   aTipoLancamento : array[1..2] of string = ('Titulos a Receber', 'Titulo a Pagar');
 var
   vsp: string;
+  VrTotalVendas, vrTotal2: Double;
 begin
-  if cdsRelatorio.FieldByName('NOME').AsString = 'Listagem de haking de produto por marca' then
+  if cdsRelatorio.FieldByName('NOME').AsString = 'Listagem de hanking de produto por marca' then
   begin
     try
       Application.CreateForm(TrptRelatorio,rptRelatorio);
       with rptRelatorio.qyAux do
       begin
+        VrTotalVendas := 0;
         Close;
         SQL.Clear;
+        sql.Add('select SUM(d.TOTAL) as TOTAL from VENDA ');
+        sql.Add('v inner join DETALHE_VENDA d on d.id_venda = v.id ');
+        sql.Add('inner join PRODUTO p on p.id = d.id_produto ');
+        sql.Add('INNER JOIN MARCA m ON m.ID = p.ID_MARCA ');
+        sql.Add('where year(v.emissao) = :pAno ');
+        sql.Add('and v.ID_FILIAL =:pFilial ');
+        ParamByName('pFilial').AsInteger := Estabelecimento;
+
+        if cbbMes.ItemIndex > 0 then
+          sql.Add('and month(v.emissao) = :pMes ');
+
+        sql.Add('AND v.TIPO IN ("V","F","N","K")');
+
+        ParamByName('pAno').AsInteger := StrToInt(cbbAno.Items[cbbAno.ItemIndex]);
+
+        if cbbMes.ItemIndex > 0 then
+          ParamByName('pMes').AsInteger := cbbMes.ItemIndex;
+
+         Open();
+
+        if not IsEmpty then
+          VrTotalVendas := FieldByName('TOTAL').AsFloat
+        else
+          VrTotalVendas := 0;
+
+        Close;
+        SQL.Clear;
+//        if cbbMes.ItemIndex = 0 then
+//          SQL.Add('select MONTH(v.EMISSAO) AS mes, m.NOME, SUM(d.TOTAL) as TOTAL ,  (SUM(d.TOTAL) / :pTotal) * 100 as PERCENTUAL ')
+//        else
+        SQL.Add('select m.NOME, SUM(d.TOTAL) as TOTAL ,  (SUM(d.TOTAL) / :pTotal) * 100 as PERCENTUAL ');
+        SQL.Add('from VENDA v ');
+        SQL.Add('inner join DETALHE_VENDA d on d.id_venda = v.id ');
+        SQL.Add('inner join PRODUTO p on p.id = d.id_produto ');
+        SQL.Add('INNER JOIN MARCA m ON m.ID = p.ID_MARCA ');
+        sql.Add('where year(v.emissao) = :pAno ');
+        sql.Add('and v.ID_FILIAL =:pFilial ');
+        ParamByName('pFilial').AsInteger := Estabelecimento;
 
 
+        if cbbMes.ItemIndex > 0 then
+          sql.Add('and month(v.emissao) = :pMes ');
+
+        SQL.Add('AND v.TIPO IN ("V","F","N","K") ');
+
+        ParamByName('pAno').AsInteger := StrToInt(cbbAno.Items[cbbAno.ItemIndex]);
+
+        if cbbMes.ItemIndex > 0 then
+        begin
+          ParamByName('pMes').AsInteger := cbbMes.ItemIndex;
+          vsP :=  'Mês/Ano: ' + cbbMes.Items[cbbMes.ItemIndex] + '/' +cbbAno.Items[cbbAno.ItemIndex];
+        end
+        else
+        begin
+          vsP := 'Ano: ' +cbbAno.Items[cbbAno.ItemIndex]
+        end;
+
+
+//        if cbbMes.ItemIndex = 0 then
+//        begin
+//          SQL.Add('GROUP BY MONTH(v.EMISSAO), m.NOME ');
+//          SQL.Add('ORDER by MONTH(v.EMISSAO), SUM(d.TOTAL) desc ');
+//        end
+//        else
+
+        SQL.Add('GROUP BY m.NOME ');
+        SQL.Add('ORDER by SUM(d.TOTAL) desc ');
+
+
+
+        ParamByName('pTotal').AsFloat := VrTotalVendas;
 
         Open();
+        vsp := vsp + ' - Total venda: ' + FormatFloat('R$ #,##0.00',VrTotalVendas);
+
+
+//
+//        if cbbMes.ItemIndex = 0 then
+//        begin
+////          rptRelatorio.criaComponente(10,3,'Mês:','mes',raEsquerda,asnao,0,'',tgNao,agSim);
+//          rptRelatorio.criaComponente(8,5,'Mês: ','mes',raEsquerda,asSim,0,'',tgNao,agSim);//campo que vai agrupado
+//          rptRelatorio.criaComponente(804,3,'SubTotal-> ','TOTAL', raDireita,asSim,0,fsMascara(2),tgSim, agSim);
+//      //****
+//
+//
+//          rptRelatorio.criaComponente(8,3,'Mes','mes', raEsquerda, asNao , 250);
+//          rptRelatorio.criaComponente(50,3,'Marca','NOME', raEsquerda, asNao , 250);
+//          rptRelatorio.criaComponente(500,3,'Total','TOTAL', raEsquerda,asSim,0,fsMascara(2,'R$'));
+//          rptRelatorio.criaComponente(1,3,'Percentual','PERCENTUAL', raDireita,asSim,0,fsMascara(6,'',true));        end
+//        else
+
+        rptRelatorio.criaComponente(8,3,'Marca/Fornecedor','NOME', raEsquerda, asNao , 250);
+        rptRelatorio.criaComponente(500,3,'Total','TOTAL', raEsquerda,asSim,0,fsMascara(2,'R$'));
+        rptRelatorio.criaComponente(1,3,'Percentual','PERCENTUAL', raDireita,asSim,0,fsMascara(6,'',true));
+
+
+
+        rptRelatorio.rlblParametros.Caption := vsP;
+        rptRelatorio.rlblTitulo.Caption := cdsRelatorio.FieldByName('NOME').AsString;
+        rptRelatorio.RLReport1.Preview;
 
 
       end;
@@ -151,15 +249,18 @@ begin
   if cdsRelatorio.FieldByName('NOME').AsString = 'Listagem de Produtos' then
   begin
     try
-      Application.CreateForm(TrptRelatorio,rptRelatorio);
-      with rptRelatorio.qyAux do
+      Application.CreateForm(TrptRelatorioPaisagem,rptRelatorioPaisagem);
+      with rptRelatorioPaisagem.qyAux do
       begin
 
         Close;
         SQL.Clear;
-        SQL.Add('SELECT P.ID, P.GTIN,P.DESCRICAO,P.PRECO,');
+        SQL.Add('SELECT P.ID, P.GTIN,P.DESCRICAO,P.PRECO,P.PRECO_COMPRA,');
         SQL.Add('COALESCE(E.ESTOQUE_QTD,0) AS ESTOQUE_QTD,P.BLOQUEADO,P.PRECO_COMPRA,');
-        SQL.Add('U.CODIGO,P.NCM, (P.PRECO*E.ESTOQUE_QTD) AS TOTAL ');
+        SQL.Add('U.CODIGO,P.NCM, ');
+        SQL.Add('(P.PRECO*E.ESTOQUE_QTD) AS VALOR, ');
+        SQL.Add('(P.PRECO_COMPRA*E.ESTOQUE_QTD) AS TOTALCOMPRA ');
+
         SQL.Add('FROM PRODUTO P ');
         SQL.Add('INNER JOIN UNIDADE U ON U.ID=P.ID_UNIDADE');
         SQL.Add('LEFT JOIN ESTOQUE E ON E.ID_PRODUTO = P.ID AND E.ID_FILIAL =:pID_FILIAL');
@@ -204,6 +305,17 @@ begin
         SQL.Add('ORDER BY P.DESCRICAO ');
         ParamByName('pID_FILIAL').AsInteger := Estabelecimento;
         Open;
+        VrTotalVendas := 0;
+        while not Eof do
+        begin
+          VrTotalVendas := VrTotalVendas + FieldByName('TOTALCOMPRA').AsFloat;
+          vrTotal2 := vrTotal2 + FieldByName('VALOR').AsFloat;
+          Next;
+        end;
+        rptRelatorioPaisagem.bndFooter.Visible:=true;
+        rptRelatorioPaisagem.LblTotal.Caption := FormatFloat('Total: #,##0.00',VrTotalVendas);
+        rptRelatorioPaisagem.lblTotal2.Caption := FormatFloat('Total: #,##0.00',vrTotal2);
+
         if IsEmpty then
         begin
           AlertaInfo('Sem registro');
@@ -211,18 +323,22 @@ begin
         end;
       end;
 
-      rptRelatorio.criaComponente(8,3,'GTIN/EAN','GTIN');
-      rptRelatorio.criaComponente(100,3,'Descrição do produto','DESCRICAO',raEsquerda,asnao,300);
-      rptRelatorio.criaComponente(500,3,'Preço','PRECO',raEsquerda,asSim,0,fsMascara(2));
-      rptRelatorio.criaComponente(550,3,'Estoque','ESTOQUE_QTD',raEsquerda,asSim,0,fsMascara(1));
-      rptRelatorio.criaComponente(1,3,'Total','TOTAL', raDireita,assim,0,fsMascara(2));
-      rptRelatorio.criaComponente(1,3,'Total (Prc. Venda * Estoque) ->','TOTAL', raDireita,asSim,0,'',tgSim);
 
-      rptRelatorio.rlblParametros.Caption := vsP;
-      rptRelatorio.rlblTitulo.Caption := cdsRelatorio.FieldByName('NOME').AsString;
-      rptRelatorio.RLReport1.Preview;
+      rptRelatorioPaisagem.criaComponente(8,3,'GTIN/EAN','GTIN');
+      rptRelatorioPaisagem.criaComponente(100,3,'Descrição do produto','DESCRICAO',raEsquerda,asnao,300);
+      rptRelatorioPaisagem.criaComponente(450,3,'Estoque','ESTOQUE_QTD',raEsquerda,asSim,0,fsMascara(1));
+      rptRelatorioPaisagem.criaComponente(600,3,'Preço','PRECO',raEsquerda,asSim,0,fsMascara(2));
+      rptRelatorioPaisagem.criaComponente(722,3,'Total','VALOR', raEsquerda,assim,0,fsMascara(2));
+      rptRelatorioPaisagem.criaComponente(810,3,'Prc Custo','PRECO_COMPRA',raEsquerda,asSim,0,fsMascara(2));
+      rptRelatorioPaisagem.criaComponente(700,3,'Total','TOTALCOMPRA',raDireita,asSim,0,fsMascara(2));
+
+     // rptRelatorioPaisagem.criaComponente(500,3,'Total-> ','VALOR', raDireita,asSim,0,fsMascara(2,'R$'),tgSim);
+
+      rptRelatorioPaisagem.rlblParametros.Caption := vsP;
+      rptRelatorioPaisagem.rlblTitulo.Caption := cdsRelatorio.FieldByName('NOME').AsString;
+      rptRelatorioPaisagem.RLReport1.Preview;
     finally
-      FreeAndNil(rptRelatorio);
+      FreeAndNil(rptRelatorioPaisagem);
     end;
   end
 
@@ -730,12 +846,16 @@ begin
   grpMes.Visible :=(cdsRelatorio.FieldByName('NOME').AsString = 'Relatório de Faturamento Anual')
   or (cdsRelatorio.FieldByName('NOME').AsString = 'Relatório de produtos vendidos mensalmente')
   or (cdsRelatorio.FieldByName('NOME').AsString = 'Histórico de vendas anual')
+  or (cdsRelatorio.FieldByName('NOME').AsString = 'Listagem de hanking de produto por marca')
+
   ;
 
   grpAno.Visible :=(cdsRelatorio.FieldByName('NOME').AsString = 'Relatório de Faturamento Anual')
   or (cdsRelatorio.FieldByName('NOME').AsString = 'Relatório de produtos vendidos mensalmente')
   or (cdsRelatorio.FieldByName('NOME').AsString = 'Listagem de produto vendidos por grupo')
   or (cdsRelatorio.FieldByName('NOME').AsString = 'Histórico de vendas anual')
+  or (cdsRelatorio.FieldByName('NOME').AsString = 'Listagem de hanking de produto por marca')
+
   ;
 
 
@@ -822,6 +942,9 @@ begin
   dtpDataEmissaoFinal.Date := Now;
   dtpDataVenctoInicial.Date := Now;
   dtpDataVenctoFinal.Date := Now;
+
+  cbbAno.ItemIndex :=  cbbAno.Items.IndexOf( IntToStr(CurrentYear));
+  cbbMes.ItemHeight := CurrentMonth;
 
   if Trim(self.Hint) <> '' then
   begin

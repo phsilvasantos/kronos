@@ -243,7 +243,8 @@ object FrmPrincipal: TFrmPrincipal
     Top = 16
   end
   object pmFinanceiro: TPopupMenu
-    Left = 232
+    Left = 96
+    Top = 56
     object ContasaReceber1: TMenuItem
       Caption = 'Contas a Receber'
       Hint = 'nmContasReceber'
@@ -274,8 +275,8 @@ object FrmPrincipal: TFrmPrincipal
     Top = 59
   end
   object pmConfiguracoes: TPopupMenu
-    Left = 416
-    Top = 192
+    Left = 272
+    Top = 184
     object Sistema1: TMenuItem
       Caption = 'Sistema'
       OnClick = Sistema1Click
@@ -308,7 +309,7 @@ object FrmPrincipal: TFrmPrincipal
     UserNameLabelCaption = 'Usu'#225'rio:'
     UpdateCaption = ucAppTitle
     OnGetPassword = JvLoginDialog1GetPassword
-    Left = 152
-    Top = 120
+    Left = 64
+    Top = 48
   end
 end

@@ -6,7 +6,7 @@
         <Projects Include="Kronos.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="krnRelatorios.dproj">
+        <Projects Include="krnRelatorio.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -26,23 +26,23 @@
     <Target Name="Kronos:Make">
         <MSBuild Projects="Kronos.dproj" Targets="Make"/>
     </Target>
-    <Target Name="krnRelatorios">
-        <MSBuild Projects="krnRelatorios.dproj"/>
+    <Target Name="krnRelatorio">
+        <MSBuild Projects="krnRelatorio.dproj"/>
     </Target>
-    <Target Name="krnRelatorios:Clean">
-        <MSBuild Projects="krnRelatorios.dproj" Targets="Clean"/>
+    <Target Name="krnRelatorio:Clean">
+        <MSBuild Projects="krnRelatorio.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="krnRelatorios:Make">
-        <MSBuild Projects="krnRelatorios.dproj" Targets="Make"/>
+    <Target Name="krnRelatorio:Make">
+        <MSBuild Projects="krnRelatorio.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="Kronos;krnRelatorios"/>
+        <CallTarget Targets="Kronos;krnRelatorio"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="Kronos:Clean;krnRelatorios:Clean"/>
+        <CallTarget Targets="Kronos:Clean;krnRelatorio:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="Kronos:Make;krnRelatorios:Make"/>
+        <CallTarget Targets="Kronos:Make;krnRelatorio:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

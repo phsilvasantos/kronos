@@ -156,6 +156,7 @@ type
     tbmLKPEstados: TFDMemTable;
     tbmLKPMunicipios: TFDMemTable;
     QyTerminal: TFDQuery;
+    QySequencial: TFDQuery;
     procedure DataModuleCreate(Sender: TObject);
     procedure QyListaEstoqueBeforeInsert(DataSet: TDataSet);
     procedure QyPedidosTIPOGetText(Sender: TField; var Text: string;
@@ -1010,9 +1011,13 @@ begin
     QyConfigSistema.Close;
     QyConfigSistema.Open('SELECT * FROM CONFIGURACAO_SISTEMA WHERE ID_FILIAL='+IntToStr(Estabelecimento));
 
+    QySequencial.Close;
+    QySequencial.Open('SELECT * FROM SEQUENCIAL WHERE (ID_FILIAL='+IntToStr(Estabelecimento) + ' AND TABELA="notafiscal")');
+
+
     //carregamento do relatorios do perfil logado
     QyListaRelatorios.Close;
-    QyListaRelatorios.Open('SELECT * FROM RELATORIO WHERE ID_PERFIL = ' + IntToStr(PerfilUsuario));
+    QyListaRelatorios.Open('SELECT * FROM RELATORIO WHERE BLOQUEADO = 0 AND ID_PERFIL = ' + IntToStr(PerfilUsuario));
 
   end;
 end;
@@ -4270,7 +4275,7 @@ procedure TdmAcesso.carregaQueries;
 var
   showMsg : Boolean;
 begin
-  showMsg := False;
+  showMsg := false;
   try
     Application.CreateForm(TFrmMensagem, FrmMensagem);
     FrmMensagem.PShow;

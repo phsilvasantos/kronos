@@ -21,14 +21,12 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
     Top = 0
     Width = 544
     Height = 401
-    ActivePage = tsVenda
+    ActivePage = tsNFe
     Align = alClient
     TabOrder = 0
     object tsVenda: TTabSheet
       Caption = 'Geral'
       ImageIndex = 1
-      ExplicitTop = 25
-      ExplicitHeight = 372
       object pgcPadrao: TPageControl
         Left = 0
         Top = 0
@@ -37,11 +35,8 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
         ActivePage = tsDefault
         Align = alClient
         TabOrder = 0
-        ExplicitHeight = 372
         object tsDefault: TTabSheet
           Caption = 'Padr'#227'o'
-          ExplicitTop = 25
-          ExplicitHeight = 343
           object pgc3: TPageControl
             Left = 0
             Top = 0
@@ -50,11 +45,8 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
             ActivePage = tsProdutos
             Align = alClient
             TabOrder = 0
-            ExplicitHeight = 343
             object tsProdutos: TTabSheet
               Caption = 'Produto'
-              ExplicitTop = 25
-              ExplicitHeight = 314
               object grpConfProdutos: TJvgGroupBox
                 Left = 0
                 Top = 0
@@ -84,7 +76,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
                 Gradient.Active = False
                 Gradient.Orientation = fgdHorizontal
                 Options = [fgoCanCollapse, fgoFilledCaption, fgoFluentlyCollapse, fgoFluentlyExpand, fgoHideChildrenWhenCollapsed, fgoSaveChildFocus]
-                ExplicitHeight = 314
                 FullHeight = 0
                 object lbl25: TLabel
                   Left = 42
@@ -388,8 +379,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
             object tsPadraoContato: TTabSheet
               Caption = 'Contato'
               ImageIndex = 2
-              ExplicitTop = 25
-              ExplicitHeight = 314
               object JvDBCheckBox8: TJvDBCheckBox
                 Left = 10
                 Top = 10
@@ -411,8 +400,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
         object tsSistema: TTabSheet
           Caption = 'Sistema'
           ImageIndex = 1
-          ExplicitTop = 25
-          ExplicitHeight = 343
           object JvDBCheckBox10: TJvDBCheckBox
             Left = 10
             Top = 10
@@ -495,7 +482,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
             Gradient.Active = False
             Gradient.Orientation = fgdHorizontal
             Options = [fgoCanCollapse, fgoFilledCaption, fgoFluentlyCollapse, fgoFluentlyExpand, fgoHideChildrenWhenCollapsed, fgoSaveChildFocus]
-            ExplicitTop = 96
             FullHeight = 0
             object lbl63: TLabel
               Left = 11
@@ -608,8 +594,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
           Caption = 'Geral'
           ImageIndex = 2
           TabVisible = False
-          ExplicitTop = 25
-          ExplicitHeight = 343
           object JvDBGrid1: TJvDBGrid
             Left = 0
             Top = 0
@@ -659,8 +643,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
         object tsConfiguracaoLocal: TTabSheet
           Caption = 'Configura'#231#245'es Local'
           ImageIndex = 3
-          ExplicitTop = 25
-          ExplicitHeight = 343
           object btnAbrirConfiguracaoLocal: TBitBtn
             Left = 5
             Top = 10
@@ -673,8 +655,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
         object tsDicionario: TTabSheet
           Caption = 'Dicionario'
           ImageIndex = 4
-          ExplicitTop = 25
-          ExplicitHeight = 343
           object pnl2: TPanel
             Left = 0
             Top = 0
@@ -821,8 +801,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
         object tsRelatorios: TTabSheet
           Caption = 'Relatorios'
           ImageIndex = 5
-          ExplicitTop = 25
-          ExplicitHeight = 343
           object dbg1: TJvDBGrid
             Left = 0
             Top = 33
@@ -908,8 +886,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
     end
     object tsNFe: TTabSheet
       Caption = 'Nota Fiscal'
-      ExplicitTop = 25
-      ExplicitHeight = 372
       object pgcNota: TPageControl
         Left = 0
         Top = 0
@@ -918,12 +894,9 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
         ActivePage = tsNF
         Align = alClient
         TabOrder = 0
-        ExplicitHeight = 372
         object tsNFeGeral: TTabSheet
           Caption = 'Geral'
           ImageIndex = 4
-          ExplicitTop = 25
-          ExplicitHeight = 343
           object lbl103: TLabel
             Left = 364
             Top = 39
@@ -1036,21 +1009,16 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
         end
         object tsNF: TTabSheet
           Caption = 'Nota Fiscal Eletr'#244'nica'
-          ExplicitTop = 25
-          ExplicitHeight = 343
           object pgcConfNF: TPageControl
             Left = 0
             Top = 0
             Width = 528
             Height = 341
-            ActivePage = tsCertificado
+            ActivePage = tsModeloSerie
             Align = alClient
             TabOrder = 0
-            ExplicitHeight = 343
             object tsCertificado: TTabSheet
               Caption = 'Certificado'
-              ExplicitTop = 25
-              ExplicitHeight = 314
               object grpCertificado: TJvgGroupBox
                 Left = 0
                 Top = 0
@@ -1080,7 +1048,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
                 Gradient.Active = False
                 Gradient.Orientation = fgdHorizontal
                 Options = [fgoCanCollapse, fgoFilledCaption, fgoFluentlyCollapse, fgoFluentlyExpand, fgoHideChildrenWhenCollapsed, fgoSaveChildFocus]
-                ExplicitHeight = 314
                 FullHeight = 0
                 object lbl24: TLabel
                   Left = 59
@@ -1234,8 +1201,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
             object tsModeloSerie: TTabSheet
               Caption = 'Modelo/Serie/N'#250'mero'
               ImageIndex = 1
-              ExplicitTop = 25
-              ExplicitHeight = 314
               object grpModeloSerie: TJvgGroupBox
                 Left = 0
                 Top = 0
@@ -1265,7 +1230,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
                 Gradient.Active = False
                 Gradient.Orientation = fgdHorizontal
                 Options = [fgoCanCollapse, fgoFilledCaption, fgoFluentlyCollapse, fgoFluentlyExpand, fgoHideChildrenWhenCollapsed, fgoSaveChildFocus]
-                ExplicitHeight = 314
                 FullHeight = 0
                 object lbl38: TLabel
                   Left = 28
@@ -1315,7 +1279,7 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
                   Width = 100
                   Height = 23
                   DataField = 'ID'
-                  DataSource = dsConfiguracaoSistema
+                  DataSource = dsQySequencial
                   TabOrder = 2
                 end
               end
@@ -1323,8 +1287,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
             object tsWebService: TTabSheet
               Caption = 'WebService'
               ImageIndex = 2
-              ExplicitTop = 25
-              ExplicitHeight = 314
               object grpWebService: TJvgGroupBox
                 Left = 0
                 Top = 0
@@ -1354,7 +1316,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
                 Gradient.Active = False
                 Gradient.Orientation = fgdHorizontal
                 Options = [fgoCanCollapse, fgoFilledCaption, fgoFluentlyCollapse, fgoFluentlyExpand, fgoHideChildrenWhenCollapsed, fgoSaveChildFocus]
-                ExplicitHeight = 314
                 FullHeight = 0
                 object lbl32: TLabel
                   Left = 90
@@ -1584,8 +1545,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
             object tsDanfe: TTabSheet
               Caption = 'DANF-e'
               ImageIndex = 3
-              ExplicitTop = 25
-              ExplicitHeight = 314
               object grpDanfe: TJvgGroupBox
                 Left = 0
                 Top = 0
@@ -1615,7 +1574,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
                 Gradient.Active = False
                 Gradient.Orientation = fgdHorizontal
                 Options = [fgoCanCollapse, fgoFilledCaption, fgoFluentlyCollapse, fgoFluentlyExpand, fgoHideChildrenWhenCollapsed, fgoSaveChildFocus]
-                ExplicitHeight = 314
                 FullHeight = 0
                 object lbl37: TLabel
                   Left = 9
@@ -1708,8 +1666,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
         object tsNFCe: TTabSheet
           Caption = 'NFCe'
           ImageIndex = 7
-          ExplicitTop = 25
-          ExplicitHeight = 343
           object GroupBox1: TJvgGroupBox
             Left = 0
             Top = 90
@@ -1881,8 +1837,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
         object tsResptecnico: TTabSheet
           Caption = 'Respons'#225'vel T'#233'cnico'
           ImageIndex = 8
-          ExplicitTop = 25
-          ExplicitHeight = 343
           object grpRespTec: TJvgGroupBox
             Left = 0
             Top = 121
@@ -1912,7 +1866,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
             Gradient.Active = False
             Gradient.Orientation = fgdHorizontal
             Options = [fgoCanCollapse, fgoFilledCaption, fgoFluentlyCollapse, fgoFluentlyExpand, fgoHideChildrenWhenCollapsed, fgoSaveChildFocus]
-            ExplicitHeight = 222
             FullHeight = 0
             object lbl72: TLabel
               Left = 71
@@ -2036,8 +1989,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
         object tsPisCofins: TTabSheet
           Caption = 'Pis Cofins'
           ImageIndex = 1
-          ExplicitTop = 25
-          ExplicitHeight = 343
           object lbl40: TLabel
             Left = 6
             Top = 14
@@ -2082,8 +2033,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
         object tsEmail: TTabSheet
           Caption = 'Email'
           ImageIndex = 2
-          ExplicitTop = 25
-          ExplicitHeight = 343
           object grpConfEmail: TJvgGroupBox
             Left = 0
             Top = 0
@@ -2113,7 +2062,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
             Gradient.Active = False
             Gradient.Orientation = fgdHorizontal
             Options = [fgoCanCollapse, fgoFilledCaption, fgoFluentlyCollapse, fgoFluentlyExpand, fgoHideChildrenWhenCollapsed, fgoSaveChildFocus]
-            ExplicitHeight = 343
             FullHeight = 0
             object lbl57: TLabel
               Left = 16
@@ -2208,8 +2156,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
         object tsDadosAdicionais1: TTabSheet
           Caption = 'Dados Adicionais NF-e'
           ImageIndex = 3
-          ExplicitTop = 25
-          ExplicitHeight = 343
           object lbl55: TLabel
             Left = 3
             Top = 4
@@ -2280,8 +2226,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
         object tsTabelaSN: TTabSheet
           Caption = 'Tabela Simples Nacional'
           ImageIndex = 6
-          ExplicitTop = 25
-          ExplicitHeight = 343
           object grdSN: TJvDBGrid
             Left = 0
             Top = 41
@@ -2387,8 +2331,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
         object TabSheet1: TTabSheet
           Caption = 'Fundo de Combate a Pobreza'
           ImageIndex = 8
-          ExplicitTop = 25
-          ExplicitHeight = 343
           object JvDBGrid2: TJvDBGrid
             Left = 0
             Top = 0
@@ -2460,8 +2402,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
     object tsSPEDFiscal: TTabSheet
       Caption = 'SPED'
       ImageIndex = 2
-      ExplicitTop = 25
-      ExplicitHeight = 372
       object pgcSped: TPageControl
         Left = 0
         Top = 0
@@ -2470,11 +2410,8 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
         ActivePage = tsSpedFiscal2
         Align = alClient
         TabOrder = 0
-        ExplicitHeight = 372
         object tsSpedFiscal2: TTabSheet
           Caption = 'SPED Fiscal'
-          ExplicitTop = 25
-          ExplicitHeight = 343
           object pgcSpedFiscal: TPageControl
             Left = 0
             Top = 0
@@ -2483,11 +2420,8 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
             ActivePage = tsSpedFiscalPerfil
             Align = alClient
             TabOrder = 0
-            ExplicitHeight = 343
             object tsSpedFiscalPerfil: TTabSheet
               Caption = 'Perfil'
-              ExplicitTop = 25
-              ExplicitHeight = 314
               object grpPerfilSped: TJvgGroupBox
                 Left = 0
                 Top = 0
@@ -2517,7 +2451,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
                 Gradient.Active = False
                 Gradient.Orientation = fgdHorizontal
                 Options = [fgoCanCollapse, fgoFilledCaption, fgoFluentlyCollapse, fgoFluentlyExpand, fgoHideChildrenWhenCollapsed, fgoSaveChildFocus]
-                ExplicitHeight = 314
                 FullHeight = 0
                 object lbl1: TLabel
                   Left = 68
@@ -2666,8 +2599,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
             object tsSpedFiscalContador: TTabSheet
               Caption = 'Dados do contador'
               ImageIndex = 1
-              ExplicitTop = 25
-              ExplicitHeight = 314
               object grpDadosContador: TJvgGroupBox
                 Left = 0
                 Top = 0
@@ -2697,7 +2628,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
                 Gradient.Active = False
                 Gradient.Orientation = fgdHorizontal
                 Options = [fgoCanCollapse, fgoFilledCaption, fgoFluentlyCollapse, fgoFluentlyExpand, fgoHideChildrenWhenCollapsed, fgoSaveChildFocus]
-                ExplicitHeight = 314
                 FullHeight = 0
                 object lbl5: TLabel
                   Left = 27
@@ -2941,8 +2871,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
             object tsSpedFiscalArquivo: TTabSheet
               Caption = 'Arquivo'
               ImageIndex = 2
-              ExplicitTop = 25
-              ExplicitHeight = 314
               object lbl97: TLabel
                 Left = 16
                 Top = 13
@@ -2977,8 +2905,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
       Caption = 'Exporta'#231#227'o'
       ImageIndex = 3
       TabVisible = False
-      ExplicitTop = 25
-      ExplicitHeight = 372
       object lbl18: TLabel
         Left = 6
         Top = 11
@@ -3128,8 +3054,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
     object tsBackup: TTabSheet
       Caption = 'Backup'
       ImageIndex = 4
-      ExplicitTop = 25
-      ExplicitHeight = 372
       object lbl44: TLabel
         Left = 16
         Top = 7
@@ -3170,8 +3094,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
     object tsCV: TTabSheet
       Caption = 'Vendas'
       ImageIndex = 5
-      ExplicitTop = 25
-      ExplicitHeight = 372
       object pgcVendas: TJvgPageControl
         Left = 0
         Top = 0
@@ -3214,11 +3136,9 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
         TabSelectedStyle.Gradient.Active = False
         TabSelectedStyle.Gradient.Orientation = fgdHorizontal
         Options = [ftoAutoFontDirection, ftoExcludeGlyphs]
-        ExplicitHeight = 372
         object tsParaovenda: TTabSheet
           Caption = 'Padr'#227'o'
           ImageIndex = 5
-          ExplicitHeight = 344
           object grpPadraoVenda: TGroupBox
             Left = 0
             Top = 0
@@ -3232,7 +3152,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
             Font.Style = []
             ParentFont = False
             TabOrder = 0
-            ExplicitHeight = 344
             object lbl29: TLabel
               Left = 48
               Top = 14
@@ -3485,7 +3404,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
         end
         object tsVendaGeral: TTabSheet
           Caption = 'Geral'
-          ExplicitHeight = 344
           object grp10: TGroupBox
             Left = 0
             Top = 0
@@ -3495,7 +3413,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
             Align = alClient
             Caption = 'Geral'
             TabOrder = 0
-            ExplicitHeight = 344
             object Label1: TLabel
               Left = 21
               Top = 16
@@ -3718,7 +3635,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
         object tsParametrosVendas: TTabSheet
           Caption = 'Parametros'
           ImageIndex = 6
-          ExplicitHeight = 344
           object cbbVENDA_FOTO_BUSCA_POS: TJvDBComboBox
             Left = 200
             Top = 258
@@ -3995,7 +3911,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
         object tsVendaImpressao: TTabSheet
           Caption = 'Impress'#227'o'
           ImageIndex = 4
-          ExplicitHeight = 344
           object lbl45: TLabel
             Left = 15
             Top = 14
@@ -4264,7 +4179,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
         object tsVendaMensagens: TTabSheet
           Caption = 'Mensagens'
           ImageIndex = 1
-          ExplicitHeight = 344
           object lbl61: TLabel
             Left = 15
             Top = 144
@@ -4341,7 +4255,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
         object tsVendaRecibo: TTabSheet
           Caption = 'Configura'#231#227'o do Recibo'
           ImageIndex = 2
-          ExplicitHeight = 344
           object lblModoRecibo: TLabel
             Left = 213
             Top = 11
@@ -4389,7 +4302,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
         object tsVendaImposto: TTabSheet
           Caption = 'Imposto'
           ImageIndex = 3
-          ExplicitHeight = 344
           object JvDBCheckBox21: TJvDBCheckBox
             Left = 10
             Top = 10
@@ -4408,8 +4320,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
     object tsEnergia: TTabSheet
       Caption = 'Energia'
       ImageIndex = 6
-      ExplicitTop = 25
-      ExplicitHeight = 372
       object lbl47: TLabel
         Left = 14
         Top = 10
@@ -4498,8 +4408,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
     object tsFinancas: TTabSheet
       Caption = 'Financeiro'
       ImageIndex = 7
-      ExplicitTop = 25
-      ExplicitHeight = 372
       object Label21: TLabel
         Left = 286
         Top = 11
@@ -4602,8 +4510,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
     object tsEstoque: TTabSheet
       Caption = 'Estoque'
       ImageIndex = 8
-      ExplicitTop = 25
-      ExplicitHeight = 372
       object grp12: TGroupBox
         Left = 0
         Top = 0
@@ -4612,7 +4518,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
         Align = alClient
         Caption = 'Controle de Estoque'
         TabOrder = 0
-        ExplicitHeight = 372
         object JvDBCheckBox23: TJvDBCheckBox
           Left = 10
           Top = 20
@@ -4654,8 +4559,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
     object tsRecebimento: TTabSheet
       Caption = 'Recebimento'
       ImageIndex = 9
-      ExplicitTop = 25
-      ExplicitHeight = 372
       object lbl66: TLabel
         Left = 35
         Top = 11
@@ -4818,8 +4721,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
     object tsOrdemServico: TTabSheet
       Caption = 'Ordem Servi'#231'o'
       ImageIndex = 10
-      ExplicitTop = 25
-      ExplicitHeight = 372
       object pgcOS: TPageControl
         Left = 0
         Top = 0
@@ -4828,11 +4729,8 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
         ActivePage = tsOSPrincipal
         Align = alClient
         TabOrder = 0
-        ExplicitHeight = 372
         object tsOSPrincipal: TTabSheet
           Caption = 'Principal'
-          ExplicitTop = 25
-          ExplicitHeight = 343
           object dbmmo1: TDBMemo
             Left = 0
             Top = 85
@@ -4843,7 +4741,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
             DataSource = dsConfiguracaoSistema
             ScrollBars = ssVertical
             TabOrder = 0
-            ExplicitHeight = 258
           end
           object pnl4: TPanel
             Left = 0
@@ -4932,8 +4829,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
         object tsOSTelefones: TTabSheet
           Caption = 'Telefones'
           ImageIndex = 1
-          ExplicitTop = 25
-          ExplicitHeight = 343
           object pnl5: TPanel
             Left = 0
             Top = 0
@@ -5014,7 +4909,6 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
             VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
             Align = alBottom
             TabOrder = 1
-            ExplicitTop = 318
           end
           object grd2: TJvDBGrid
             Left = 0
@@ -5236,8 +5130,8 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
   end
   object dsLkpContas: TDataSource
     DataSet = dmAcesso.QyLkpContaCorrente
-    Left = 324
-    Top = 362
+    Left = 276
+    Top = 282
   end
   object dsFinLkpClientes: TDataSource
     DataSet = dmAcesso.QyLKPClientes
@@ -5277,5 +5171,10 @@ object FrmConfiguracaoSistema: TFrmConfiguracaoSistema
     Configuracoes.RespTec.IdCSRT = 0
     Left = 40
     Top = 264
+  end
+  object dsQySequencial: TDataSource
+    DataSet = dmAcesso.QySequencial
+    Left = 388
+    Top = 174
   end
 end

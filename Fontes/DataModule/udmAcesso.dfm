@@ -5,10 +5,10 @@ object dmAcesso: TdmAcesso
   Width = 1006
   object FDConnection1: TFDConnection
     Params.Strings = (
-      'Database=DBDADOS'
-      'User_Name=root'
-      'Password=psmaster'
-      'Server=localhost'
+      'Database=dbdados'
+      'User_Name=varela'
+      'Password=CI5458OM'
+      'Server=rjpc.c3fzd8vzopkd.us-east-2.rds.amazonaws.com'
       'DriverID=MySQL')
     ResourceOptions.AssignedValues = [rvAutoReconnect]
     ResourceOptions.AutoReconnect = True
@@ -637,7 +637,8 @@ object dmAcesso: TdmAcesso
   object QyListaRelatorios: TFDQuery
     Connection = FDConnection1
     SQL.Strings = (
-      'SELECT * FROM RELATORIO WHERE ID_PERFIL = 1')
+      'SELECT * FROM RELATORIO WHERE ID_PERFIL = 1'
+      'AND BLOQUEADO = 0')
     Left = 384
     Top = 184
   end
@@ -804,5 +805,10 @@ object dmAcesso: TdmAcesso
     Connection = FDConnection1
     Left = 208
     Top = 136
+  end
+  object QySequencial: TFDQuery
+    Connection = FDConnection1
+    Left = 216
+    Top = 448
   end
 end

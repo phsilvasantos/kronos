@@ -1,5 +1,7 @@
 inherited FrmListaEstoque: TFrmListaEstoque
   Caption = 'Estoque Por Filial'
+  ExplicitWidth = 800
+  ExplicitHeight = 600
   PixelsPerInch = 96
   TextHeight = 16
   inherited pnlOpcoes: TPanel

@@ -233,6 +233,19 @@ object rptRelatorio: TrptRelatorio
         ParentFont = False
         Text = 'Total registro(s): '
       end
+      object LblTotal: TRLLabel
+        Left = 671
+        Top = 2
+        Width = 47
+        Height = 14
+        Align = faRightOnly
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
     end
     object rlgrpGrupo: TRLGroup
       Left = 38
@@ -294,7 +307,7 @@ object rptRelatorio: TrptRelatorio
   end
   object QyAux: TFDQuery
     Connection = dmAcesso.FDConnection1
-    Left = 408
-    Top = 24
+    Left = 440
+    Top = 65520
   end
 end

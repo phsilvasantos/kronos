@@ -12,6 +12,7 @@ uses
 
 type
   TrptRelatorioPaisagem = class(TrptRelatorio)
+    lblTotal2: TRLLabel;
   private
     { Private declarations }
   public

@@ -259,7 +259,7 @@ begin
       end;
     end;
 
-    if (QyCadastroTributacaoProduto.State in [dsEdit]) then
+    if (QyCadastroTributacaoProduto.State in [dsEdit, dsInsert]) then
     begin
       try
         QyCadastroTributacaoProduto.Post;

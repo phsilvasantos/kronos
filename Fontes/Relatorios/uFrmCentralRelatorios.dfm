@@ -143,7 +143,7 @@ object FrmCentralRelatorios: TFrmCentralRelatorios
   end
   object ScrollBox1: TScrollBox
     Left = 336
-    Top = -1559
+    Top = -1183
     Width = 384
     Height = 1979
     TabOrder = 2

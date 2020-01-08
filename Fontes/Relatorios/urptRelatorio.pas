@@ -42,6 +42,7 @@ type
     bndFooterGrupo: TRLBand;
     RLXLSXFilter1: TRLXLSXFilter;
     QyAux: TFDQuery;
+    LblTotal: TRLLabel;
     procedure rldbtxtBLOQUEADOBeforePrint(Sender: TObject; var AText: string;
       var PrintIt: Boolean);    
     procedure RLReport1BeforePrint(Sender: TObject; var PrintIt: Boolean);
@@ -139,6 +140,7 @@ begin
         bndDetalhe.Parent :=rlgrpGrupo;
         rlgrpGrupo.DataFields := pFieldName;
         otexto.Parent := bndHeaderGrupo;
+        otexto.Text := pCaption;
       end
       else
       begin

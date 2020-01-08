@@ -259,7 +259,9 @@ begin
     ' INNER JOIN UNIDADE ON UNIDADE.ID=PRODUTO.ID_UNIDADE '
     + ' INNER JOIN MARCA ON MARCA.ID=PRODUTO.ID_MARCA '
     + ' LEFT JOIN ESTOQUE ON ESTOQUE.ID_PRODUTO = PRODUTO.ID AND ESTOQUE.ID_FILIAL = ' + IntToStr(Estabelecimento)
+
     ;
+    FrmListaEstoque.Where := ' WHERE PRODUTO.BLOQUEADO = 0 ';
     FrmListaEstoque.FieldOrderBy := 'DESCRICAO';
     FrmListaEstoque.Tabela := 'PRODUTO';
     FrmListaEstoque.Caption := 'Lista de consulta de estoque';
